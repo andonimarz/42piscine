@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-/* #include <stdio.h>
+/*#include <stddef.h>
+#include <stdio.h>
 
 void	*ft_memset(void *b, int c, size_t len);
 

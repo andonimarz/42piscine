@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+/* #include <stddef.h>
 #include <stdio.h>
 
 void	*memcpy(void *dst, const void *src, size_t n);
@@ -22,7 +22,7 @@ int	main(void)
 
 	printf("%s", memcpy(dst, src, 6));
 	return (0);
-}
+} */
 
 void	*memcpy(void *dst, const void *src, size_t n)
 {
