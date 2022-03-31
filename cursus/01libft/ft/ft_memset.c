@@ -10,7 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+<<<<<<< HEAD
 /* #include <stddef.h>
+=======
+/*#include <stddef.h>
+>>>>>>> b6176f53f5c1ed4f8a187d3cf585dd8919a896a6
 #include <stdio.h>
 
 void	*ft_memset(void *b, int c, size_t len);
