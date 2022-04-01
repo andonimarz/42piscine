@@ -1,39 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 12:04:51 by amarzana          #+#    #+#             */
-/*   Updated: 2022/04/01 10:53:46 by amarzana         ###   ########.fr       */
+/*   Created: 2022/04/01 11:45:34 by amarzana          #+#    #+#             */
+/*   Updated: 2022/04/01 12:05:34 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-void	*ft_memchr(const void *s, int c, size_t n);
+char	*ft_strdup(const char *s1);
 
 int	main(void)
 {
-	char	str[] = "bcdefghijklmn";
+	char str[] = "hola holita";
 
-	printf("%s\n", ft_memchr(str, 'a', 4));
-	printf("%s", memchr(str, 'a', 4));
+	printf("%s \n", strdup(str));
+	printf("%s \n", ft_strdup(str));
 	return (0);
 } */
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strdup(const char *s1)
 {
+	char	*ptr;
 	size_t	i;
 
 	i = 0;
-	while ((i < n) && (((unsigned char *)s) + i))
+	while (s1[i])
+		i++;
+	ptr = (char *)malloc((sizeof(char) * i) + 1);
+	if (ptr == NULL)
+		return (NULL);
+	i = 0;
+	while (s1[i])
 	{
-		if (((unsigned char *)s)[i] == (unsigned char)c)
-			return (((unsigned char *)s) + i);
+		ptr[i] = s1[i];
 		i++;
 	}
-	return (0);
+	ptr[i] = '\0';
+	return (ptr);
 }
