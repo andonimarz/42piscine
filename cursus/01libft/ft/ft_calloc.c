@@ -6,23 +6,13 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 11:30:07 by amarzana          #+#    #+#             */
-/*   Updated: 2022/04/01 11:56:32 by amarzana         ###   ########.fr       */
+/*   Updated: 2022/04/03 12:02:44 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_bzero(void *s, size_t len)
-{
-	unsigned char	*aux;
-
-	aux = s;
-	while (len--)
-		*aux++ = 48;
-	return (s);
-}
-
-void	*calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	char	*ptr;
 

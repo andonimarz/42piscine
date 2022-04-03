@@ -6,10 +6,11 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:49:44 by amarzana          #+#    #+#             */
-/*   Updated: 2022/03/31 10:09:45 by amarzana         ###   ########.fr       */
+/*   Updated: 2022/04/03 12:03:33 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 /* #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
@@ -28,7 +29,7 @@ int	main(void)
 	return (0);
 } */
 
-void	*memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 

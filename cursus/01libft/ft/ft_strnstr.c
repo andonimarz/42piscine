@@ -6,10 +6,11 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 10:11:38 by amarzana          #+#    #+#             */
-/*   Updated: 2022/04/01 10:54:11 by amarzana         ###   ########.fr       */
+/*   Updated: 2022/04/03 17:19:11 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 /* #include <stdio.h>
 #include <string.h>
 
@@ -23,27 +24,23 @@ int	main(void)
 	printf("%s\n", strnstr(haystack, needle, 26));
 	printf("%s\n", ft_strnstr(haystack, needle, 26));
 	return (0);
-} */
+}*/
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	in;
 	size_t	ih;
-	char	*ndl;
-	char	*hstk;
 
 	ih = 0;
-	ndl = (char *)needle;
-	hstk = (char *)haystack;
-	if (*ndl == '\0')
-		return (hstk);
-	while (hstk[ih] && ih < len)
+	if (*needle == '\0')
+		return ((char *)haystack);
+	while (haystack[ih] && ih < len)
 	{
 		in = 0;
-		while (hstk[ih + in] == ndl[in])
+		while (haystack[ih + in] == needle[in] && (in + ih) < len)
 		{
-			if (ndl[in + 1] == '\0')
-				return (&hstk[ih]);
+			if (needle[in + 1] == '\0')
+				return ((char *)&haystack[ih]);
 			in++;
 		}
 		ih++;

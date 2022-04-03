@@ -6,10 +6,11 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 11:54:05 by amarzana          #+#    #+#             */
-/*   Updated: 2022/03/31 12:00:18 by amarzana         ###   ########.fr       */
+/*   Updated: 2022/04/03 16:25:04 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 /* #include <stdio.h>
 
 char	*ft_strrchr(const char *s, int c);
@@ -20,19 +21,18 @@ int	main(void)
 
 	printf("%s\n", ft_strrchr(str, 'd'));
 	return (0);
-} */
+}*/
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	int	i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	while (s[--i])
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
 		if (s[i] == c)
 			return (((char *)s) + i);
+		i--;
 	}
-	return (NULL);
+	return (0);
 }

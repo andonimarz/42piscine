@@ -6,10 +6,11 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 08:26:47 by amarzana          #+#    #+#             */
-/*   Updated: 2022/03/31 10:12:49 by amarzana         ###   ########.fr       */
+/*   Updated: 2022/04/03 12:49:36 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 /* #include <stddef.h>
 #include <stdio.h>
 
