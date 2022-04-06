@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 11:34:00 by amarzana          #+#    #+#             */
-/*   Updated: 2022/04/03 14:52:55 by amarzana         ###   ########.fr       */
+/*   Updated: 2022/04/06 17:26:02 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,24 @@ int	main(void)
 {
 	char	str[] = "abcdefghijklmnopq";
 
-	printf("%s\n", ft_strchr(str, 'W'));
+	printf("%s\n", ft_strchr(str, 'W' + 256));
 	return (0);
-}*/
+} */
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	char	*str;
+	char	ch;
 
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	if (s[i] == c)
-		return (((char *)s) + i);
+	str = (char *)s;
+	ch = (char)c;
+	while (*str)
+	{
+		if (*str == ch)
+			return (str);
+		str++;
+	}
+	if (*str == ch)
+		return (str);
 	return (NULL);
 }

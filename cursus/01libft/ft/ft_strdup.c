@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 11:45:34 by amarzana          #+#    #+#             */
-/*   Updated: 2022/04/01 12:05:34 by amarzana         ###   ########.fr       */
+/*   Updated: 2022/04/06 18:10:03 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s1);
 
 int	main(void)
 {
-	char str[] = "hola holita";
+	char str[] = "\0";
 
 	printf("%s \n", strdup(str));
 	printf("%s \n", ft_strdup(str));
@@ -35,7 +35,7 @@ char	*ft_strdup(const char *s1)
 	while (s1[i])
 		i++;
 	ptr = (char *)malloc((sizeof(char) * i) + 1);
-	if (ptr == NULL)
+	if (!ptr)
 		return (NULL);
 	i = 0;
 	while (s1[i])

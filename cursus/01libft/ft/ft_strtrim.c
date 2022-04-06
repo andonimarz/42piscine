@@ -1,44 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 11:54:05 by amarzana          #+#    #+#             */
-/*   Updated: 2022/04/06 17:34:47 by amarzana         ###   ########.fr       */
+/*   Created: 2022/04/06 16:28:40 by amarzana          #+#    #+#             */
+/*   Updated: 2022/04/06 19:18:23 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-/* #include <stdio.h>
-
-char	*ft_strrchr(const char *s, int c);
+char	*ft_strtrim(char const *s1, char const *set);
 
 int	main(void)
 {
-	char	str[] = "abcdefghijklmnopq";
+	char	s1[] = "holaholahola";
+	char	set[] = "hol";
 
-	printf("%s\n", ft_strrchr(str, 'd'));
+	printf("%s", ft_strtrim(s1, set))
 	return (0);
-}*/
+}
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
-	char	ch;
-	size_t	i;
+	size_t	is1;
+	size_t	iset;
+	size_t	len;
 
-	i = ft_strlen(s);
-	str = (char *)s + i;
-	ch = (char)c;
-	while (i--)
+	is1 = 0;
+	while (s1[is1])
 	{
-		if (*str == c)
-			return (str);
-		str--;
+		iset = 0;
+		while (set[iset])
+		{
+			//con strchr y strrchr????
+			iset++;
+		}
+		is1++;
 	}
-	if (*str == ch)
-		return (str);
-	return (NULL);
 }

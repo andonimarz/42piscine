@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 11:54:05 by amarzana          #+#    #+#             */
-/*   Updated: 2022/04/06 17:34:47 by amarzana         ###   ########.fr       */
+/*   Created: 2022/04/06 15:27:24 by amarzana          #+#    #+#             */
+/*   Updated: 2022/04/06 15:54:19 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /* #include <stdio.h>
 
-char	*ft_strrchr(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 int	main(void)
 {
-	char	str[] = "abcdefghijklmnopq";
+	char	s1[] = "abcd";
+	char	s2[] = "efgh";
 
-	printf("%s\n", ft_strrchr(str, 'd'));
+	printf("%s", ft_strjoin(s1, s2));
 	return (0);
-}*/
+} */
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str;
-	char	ch;
-	size_t	i;
+	char	*ptr;
+	size_t	len;
 
-	i = ft_strlen(s);
-	str = (char *)s + i;
-	ch = (char)c;
-	while (i--)
-	{
-		if (*str == c)
-			return (str);
-		str--;
-	}
-	if (*str == ch)
-		return (str);
-	return (NULL);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	ptr = (char *)malloc(len + 1);
+	ft_strlcpy(ptr, s1, (ft_strlen(s1) + 1));
+	ft_strlcat(ptr, s2, (len + 1));
+	return (ptr);
 }

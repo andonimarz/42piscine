@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    libft                                              :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amarzana <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/03 10:32:01 by amarzana          #+#    #+#              #
-#    Updated: 2022/04/03 10:40:07 by amarzana         ###   ########.fr        #
+#    Updated: 2022/04/06 15:38:03 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC = ft_isalpha.c			\
 	  ft_toupper.c			\
 	  ft_tolower.c			\
 	  ft_strnstr.c			\
-	  ft_atoi.c			\
+	  ft_atoi.c				\
 	  ft_strchr.c			\
 	  ft_strrchr.c			\
 	  ft_memset.c			\
@@ -35,10 +35,11 @@ SRC = ft_isalpha.c			\
 	  ft_memmove.c			\
 	  ft_calloc.c			\
 	  ft_strdup.c			\
+	  ft_substr.c			\
+	  ft_strjoin.c			\
 
 INCLUDES = libft.h
 
-#OBJ_BONUS = $(SRC_BONUS:.c=.o)
 OBJ = $(SRC:.c=.o)
 
 CC = gcc

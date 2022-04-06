@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lubuntu <lubuntu@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 16:15:51 by marvin            #+#    #+#             */
-/*   Updated: 2022/04/04 18:38:50 by lubuntu          ###   ########.fr       */
+/*   Updated: 2022/04/06 18:14:37 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
+/* #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
 
@@ -22,21 +23,25 @@ int	main(void)
 
 	printf("%s", ft_substr(s, 3, 2));
 	return (0);
-}
+} */
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*ptr;
-	int		i;
+	char	*str;
+	size_t	i;
 
 	i = 0;
-	ptr = (char *)malloc(len);
-	if (ptr == NULL)
+	while (s[i] && i < len)
+		i++;
+	str = (char *)malloc(i + 1);
+	if (!str)
 		return (NULL);
-	else
+	if (start > ft_strlen(s))
 	{
-		while (len)
-			ptr[i++] = s[start++];
+		*str = '\0';
+		return (str);
 	}
-	return (ptr);
+	ft_strlcpy(str, &s[start], i + 1);
+	return (str);
 }
+
